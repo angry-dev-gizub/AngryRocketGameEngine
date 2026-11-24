@@ -223,7 +223,7 @@ Angry Rocket Native may provide functionality such as:
 - Image decoding
 - Model decoding
 - Audio
-- Physics
+- Physics (using Neptune)
 - Collision detection
 - Scene management
 - UI utilities
