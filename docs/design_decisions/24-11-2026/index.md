@@ -11,3 +11,4 @@ This folder contains the design decisions made on November 24, 2026.
 | [DD-005](DD-005.md) | Error Classification and Identification | Accepted |
 | [DD-006](DD-006.md) | Result Type for Operation Outcomes | Accepted |
 | [DD-007](DD-007.md) | Separation of Result Handling and Resource Cleanup | Accepted |
+| [DD-008](DD-008.md) | PAL Error Reporting | Accepted |
