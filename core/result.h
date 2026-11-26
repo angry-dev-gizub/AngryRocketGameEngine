@@ -83,7 +83,7 @@ struct ARResult_t
  *
  * @return A valid successful Result.
  */
-AR_API ARResult arResultSuccess(void);
+AR_API ARResult ar_result_success(void);
 
 /**
  * @brief Creates a failed Result.
@@ -104,7 +104,7 @@ AR_API ARResult arResultSuccess(void);
  *            error. The constructor invokes assert and aborts program execution;
  *            it does not return an invalid Result. This applies in debug builds.
  */
-AR_API ARResult arResultFailure(uint64_t error);
+AR_API ARResult ar_result_failure(uint64_t error);
 
 AR_EXTERN_C_END
 

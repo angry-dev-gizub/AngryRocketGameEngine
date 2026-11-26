@@ -9,7 +9,7 @@
 #include "errors.h"
 #include "result.h"
 
-ARResult arResultSuccess(void)
+ARResult ar_result_success(void)
 {
     return (ARResult) {
         .ok = true,
@@ -17,7 +17,7 @@ ARResult arResultSuccess(void)
     };
 }
 
-ARResult arResultFailure(uint64_t error)
+ARResult ar_result_failure(uint64_t error)
 {
     AR_ASSERT_MSG(error != AR_ERROR_NONE, "AngryRocketCore: 'error' must be non-zero.");
 
