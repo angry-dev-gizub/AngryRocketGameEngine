@@ -12,12 +12,12 @@
  *
  * @brief Generic operation result representation.
  *
- * Provides a common result model for Arc Core operations using a packed
+ * Provides a common result model for AngryRocket operations using a packed
  * uint64_t error value with numeric layout 0xLLSSDDXXCCCCCCCC.
  * 
  * Callers inspect 'ok'; no separate public validity check is required.
  *
- * @note This file is part of Arc Core.
+ * @note This file is part of AngryRocketCore.
  */
 
 #ifndef AR_RESULT_H_
