@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2026 Nelson Somé
  *
@@ -10,7 +11,7 @@
  *
  * @author Nelson Somé
  *
- * @brief Compiler detection.
+ * @brief Compiler identification and feature detection.
  *
  * @note This file is part of AngryRocketCore.
  */
@@ -18,6 +19,7 @@
 #ifndef AR_COMPILER_H_
 #define AR_COMPILER_H_
 
+/* Compiler identification. */
 #define AR_COMPILER_CLANG   0
 #define AR_COMPILER_INTEL   0
 #define AR_COMPILER_GCC     0
@@ -44,6 +46,33 @@
 #  undef AR_COMPILER_UNKNOWN
 #  define AR_COMPILER_UNKNOWN 1
 #  define AR_COMPILER_NAME "Unknown"
+#endif
+
+/* Compiler feature detection. */
+#if AR_COMPILER_GCC || AR_COMPILER_CLANG || AR_COMPILER_INTEL
+#  define AR_HAS_FORCE_INLINE       1
+#  define AR_HAS_NOINLINE           1
+#  define AR_HAS_DEPRECATED         1
+#  define AR_HAS_BRANCH_HINTS       1
+#  define AR_HAS_UNREACHABLE        1
+#  define AR_HAS_PACKED_STRUCTURES  1
+#  define AR_HAS_FALLTHROUGH        1
+#elif AR_COMPILER_MSVC
+#  define AR_HAS_FORCE_INLINE       1
+#  define AR_HAS_NOINLINE           1
+#  define AR_HAS_DEPRECATED         1
+#  define AR_HAS_BRANCH_HINTS       0
+#  define AR_HAS_UNREACHABLE        1
+#  define AR_HAS_PACKED_STRUCTURES  1
+#  define AR_HAS_FALLTHROUGH        0
+#else
+#  define AR_HAS_FORCE_INLINE       0
+#  define AR_HAS_NOINLINE           0
+#  define AR_HAS_DEPRECATED         0
+#  define AR_HAS_BRANCH_HINTS       0
+#  define AR_HAS_UNREACHABLE        0
+#  define AR_HAS_PACKED_STRUCTURES  0
+#  define AR_HAS_FALLTHROUGH        0
 #endif
 
 #endif /* AR_COMPILER_H_ */
