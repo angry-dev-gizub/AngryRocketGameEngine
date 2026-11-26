@@ -4,7 +4,7 @@ option(
     ON # on by default.
 )
 
-add_library(ar-sanitizers INTERFACE)
+add_library(AngryRocketSanitizers INTERFACE)
 
 if(AR_ENABLE_SANITIZERS)
 
@@ -15,14 +15,14 @@ if(AR_ENABLE_SANITIZERS)
     )
 
         target_compile_options(
-            ar-sanitizers
+            AngryRocketSanitizers
             INTERFACE
             $<$<CONFIG:Debug>:-fsanitize=address,undefined>
             $<$<CONFIG:Debug>:-fno-omit-frame-pointer>
         )
 
         target_link_options(
-            ar-sanitizers
+            AngryRocketSanitizers
             INTERFACE
             $<$<CONFIG:Debug>:-fsanitize=address,undefined>
         )
@@ -30,7 +30,7 @@ if(AR_ENABLE_SANITIZERS)
     elseif(MSVC)
 
         target_compile_options(
-            ar-sanitizers
+            AngryRocketSanitizers
             INTERFACE
             $<$<CONFIG:Debug>:/fsanitize=address>
         )
