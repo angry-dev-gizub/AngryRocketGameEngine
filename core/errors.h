@@ -42,7 +42,7 @@
  */
 #define AR_ERROR_PACK(layer, source, domain, severity, code)\
     (\
-    (((uint64_t)(layer)    & 0xFFULL) << 56U))  |\
+    (((uint64_t)(layer)    & 0xFFULL) << 56U)  |\
     (((uint64_t)(source)   & 0xFFULL) << 48U)   |\
     (((uint64_t)(domain)   & 0xFFULL) << 40U)   |\
     (((uint64_t)(severity) & 0xFFULL) << 32U)   |\
