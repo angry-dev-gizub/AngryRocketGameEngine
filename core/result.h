@@ -55,8 +55,7 @@ typedef struct ARResult_t ARResult;
 /**
  * @brief Generic operation Result.
  *
- * An ARResult represents either success or failure and optionally carries
- * ownership of one residual resource after failure.
+ * An ARResult represents either success or failure.
  *
  * @note Failure requires a recognized non-NONE severity. Domain and code
  *       identifiers need not be recognized by this implementation. Domain zero
@@ -69,9 +68,8 @@ typedef struct ARResult_t ARResult;
  */
 struct ARResult_t
 {
-AR_PUBLIC
-    bool ok;
-    uint64_t error;
+    AR_PUBLIC bool ok;
+    AR_PUBLIC uint64_t error;
 };
 
 /**
