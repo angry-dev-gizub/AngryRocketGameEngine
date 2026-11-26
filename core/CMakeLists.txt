@@ -5,6 +5,7 @@ add_library(
     AngryRocketCore
     STATIC
     assertion.c
+    result.c
 )
 
 target_include_directories(
