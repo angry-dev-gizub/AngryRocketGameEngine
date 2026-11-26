@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2026 Nelson Somé
  *

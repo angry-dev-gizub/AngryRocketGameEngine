@@ -23,6 +23,9 @@
 #define AR_ERROR_H_
 
 #include <stdint.h>
+#include "assertion.h"
+
+AR_STATIC_ASSERT(sizeof(uint64_t) == 8, "AngryRocketCore: Packed error type must be 64 bits.");
 
 /**
  * @brief Packs the layer, source, domain, severity, and error code together
@@ -42,11 +45,12 @@
  */
 #define AR_ERROR_PACK(layer, source, domain, severity, code)\
     (\
-    (((uint64_t)(layer)    & 0xFFULL) << 56U)  |\
+    (((uint64_t)(layer)    & 0xFFULL) << 56U)   |\
     (((uint64_t)(source)   & 0xFFULL) << 48U)   |\
     (((uint64_t)(domain)   & 0xFFULL) << 40U)   |\
     (((uint64_t)(severity) & 0xFFULL) << 32U)   |\
-    (((uint64_t)(code)     & 0xFFFFFFFFULL))
+    (((uint64_t)(code)     & 0xFFFFFFFFULL))     \
+    )
 
 /**
  * @brief Extracts the layer field from a complete packed error value.
