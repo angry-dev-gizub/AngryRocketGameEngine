@@ -65,7 +65,6 @@ string(
 
 add_subdirectory(external)
 add_subdirectory(sani)
-add_subdirectory(platform)
 add_subdirectory(core)
 
 if (${AR_STANDALONE})
