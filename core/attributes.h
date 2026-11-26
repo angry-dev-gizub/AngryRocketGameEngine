@@ -67,8 +67,14 @@
 #endif
 
 /* Alignment. */
-#define AR_ALIGNAS(bytes) _Alignas(bytes)
-#define AR_ALIGNOF(type)  _Alignof(type)
+#ifdef __cplusplus
+#  define AR_ALIGNAS(bytes) alignas(bytes)
+#  define AR_ALIGNOF(type)  alignof(type)
+#else
+#  define AR_ALIGNAS(bytes) _Alignas(bytes)
+#  define AR_ALIGNOF(type)  _Alignof(type)
+#endif
+
 
 /* Structure packing. */
 #define AR_STRINGIFY_IMPL(value) #value
